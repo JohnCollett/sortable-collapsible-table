@@ -4,10 +4,12 @@ let tableFactory=function(element,data,options){
     table.elements={};
     table.data=data;
     table.sorted;
+    
     const tableKeys=Object.keys(data[0]);
     data.forEach(function(item,i){
         item.ind=i;
     });
+    
     const tableSort=function(tableSortVar){
         if(table.sorted === tableSortVar){
             if(isNaN(data[0][tableSortVar])){
@@ -37,24 +39,26 @@ let tableFactory=function(element,data,options){
         table.sorted=tableSortVar;
     }
     };
-    const createth=function(input){
+    const createTh=function(input){
         let th=document.createElement('th');
-        th.setAttribute('class','table-header');
+        th.setAttribute('class', options.thClass ? options.thClass:'table-header');
         th.textContent=input;
         return th;
     };
-    const createtr=function(){
+    const createTr=function(){
         let tr=document.createElement('tr');
-        tr.setAttribute('class','table-row');
+        tr.setAttribute('class',options.trClass ? options.trClass:'table-row');
         return tr;
     };
-    const createtd=function(input){
+    const createTd=function(input){
         let td=document.createElement('td');
-        td.setAttribute('class','table-elem');
+        td.setAttribute('class', options.tdClass ? options.tdClass:'table-elem');
         if(isNaN(input)){
             td.textContent=input;
+        }else if(Number.isInteger(Number(input))){
+            td.textContent=input;
         }else{
-            td.textContent=input.toFixed(2);
+            td.textContent=input.toFixed(options.decimalDigits ? options.decimalDigits:2);
         }
         return td;
     };
@@ -105,9 +109,9 @@ let tableFactory=function(element,data,options){
            
            tab.appendChild(capt);
        }
-       const headertr=createtr();
+       const headertr=createTr();
        tableKeys.forEach(function(item){
-           let tempth=createth(item);
+           let tempth=createTh(item);
            tempth.addEventListener('click',function(){
                tableSort(item);
                tableRedraw();
@@ -125,9 +129,9 @@ let tableFactory=function(element,data,options){
        tab.appendChild(headertr);
        
       data.forEach(function(row){
-          let temptr=createtr();
+          let temptr=createTr();
           tableKeys.forEach(function(key){
-            let tempData=createtd(row[key]);
+            let tempData=createTd(row[key]);
             temptr.appendChild(tempData);
             if(table.elements[key]){
               table.elements[key].push(tempData);

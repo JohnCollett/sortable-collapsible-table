@@ -1,8 +1,8 @@
 let csTable=function(element,data,options){
     let table={};
     table.elem=document.querySelector(element);
-    table.elem.setAttribute('class','sc-table');
-    table.elements=[];
+    table.elem.setAttribute('class','sc-table-holder');
+    table.rows=[];
     table.labels=[];
     table.sorted;
     
@@ -122,7 +122,7 @@ let csTable=function(element,data,options){
         
         //create table title and set class 
         let capt=document.createElement('caption');
-        capt.setAttribute('class','sc-table-title');
+        capt.setAttribute('class',options.titleClass ? options.titleClass:'sc-table-title');
         capt.textContent=' [ - ] '+options.title;
         
         //set variable for the expanding animation
@@ -195,7 +195,7 @@ let csTable=function(element,data,options){
     
     const createTable=function(){
        const tab=document.createElement('table');
-       
+       tab.setAttribute('class', options.tableClass? options.tableClass : '.sc-table');
        //Create Title 
        let capt=createTitle();
        tab.appendChild(capt);
@@ -228,7 +228,7 @@ let csTable=function(element,data,options){
             let tempData=createTd(row[key] ? row[key] : '');
             temptr.appendChild(tempData);              
           });
-          table.elements.push(temptr);
+          table.rows.push(temptr);
           tab.appendChild(temptr);
       });
       
@@ -242,7 +242,7 @@ let csTable=function(element,data,options){
        });
        let tab=table.elem.querySelector('table');
        order.forEach(function(ind){
-           tab.appendChild(table.elements[ind]);
+           tab.appendChild(table.rows[ind]);
        });
    };
    

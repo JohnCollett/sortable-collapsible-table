@@ -1,11 +1,11 @@
-.sc-table{
+.sc-table-holder{
     overflow-x: auto;
     width:90%;
     margin: 30px auto;
     transition: height 0.5s linear;
     overflow-y: hidden;
 }
-.sc-table table
+.sc-table
 {
 border-collapse: collapse;
 border-spacing: 0px;
@@ -35,7 +35,7 @@ border-top:0px;
                 }
 }
 @media(min-width:768px){
-                .sc-table{
+                .sc-table-holder{
                     width:80%;
                 }
                 .sc-table-title{

@@ -1,0 +1,29 @@
+{
+  "name": "sortable-collapsable-table",
+  "version": "1.0.0",
+  "description": "Generate HTML tables that are sortable and collapsable easily ",
+  "main": "src/table.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnCollett/sortable-collapsable-table.git"
+  },
+  "keywords": [
+    "table"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JohnCollett/sortable-collapsable-table/issues"
+  },
+  "homepage": "https://github.com/JohnCollett/sortable-collapsable-table#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-terser": "^1.2.0",
+    "gulp-uglifycss": "^1.1.0",
+    "gulp-umd": "^2.0.0"
+  }
+}

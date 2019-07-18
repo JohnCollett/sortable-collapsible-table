@@ -16,7 +16,11 @@
     "animated",
     "responsive"
   ],
-  "author": "",
+  "author": {
+    "name": "John Collett",
+    "email": "collett.jd@gmail.com",
+    "url": "https://github.com/JohnCollett"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JohnCollett/sortable-collapsable-table/issues"

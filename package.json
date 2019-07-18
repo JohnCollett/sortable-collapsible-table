@@ -2,7 +2,7 @@
   "name": "sortable-collapsable-table",
   "version": "1.0.0",
   "description": "Generate HTML tables that are sortable and collapsable easily ",
-  "main": "src/table.min.js",
+  "main": "dist/table.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

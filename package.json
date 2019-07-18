@@ -11,7 +11,10 @@
     "url": "git+https://github.com/JohnCollett/sortable-collapsable-table.git"
   },
   "keywords": [
-    "table"
+    "table",
+    "front end",
+    "animated",
+    "responsive"
   ],
   "author": "",
   "license": "MIT",

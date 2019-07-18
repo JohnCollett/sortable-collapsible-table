@@ -195,7 +195,7 @@ let csTable=function(element,data,options){
     
     const createTable=function(){
        const tab=document.createElement('table');
-       tab.setAttribute('class', options.tableClass? options.tableClass : '.sc-table');
+       tab.setAttribute('class', options.tableClass? options.tableClass : 'sc-table');
        //Create Title 
        let capt=createTitle();
        tab.appendChild(capt);
